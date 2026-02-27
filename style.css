@@ -8,13 +8,18 @@
 body {
   background: #fafafa;
   color: #111;
+  padding-top: 110px; /* espaço para header fixo */
 }
 
-/* HEADER */
+/* HEADER FIXO */
 .site-header {
   padding: 24px;
   text-align: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
 }
 
 .logo {
@@ -43,6 +48,12 @@ body {
   width: 22px;
 }
 
+.br-price,
+.ar-price {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
@@ -62,28 +73,34 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* HERO */
+/* HERO COM VIDEO */
 .hero {
+  position: relative;
   height: 75vh;
+  margin-top: 110px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .hero-text {
-  background: rgba(255,255,255,0.9);
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.4);
   padding: 24px 32px;
   text-align: center;
   font-size: 18px;
-}
-
-/* PARALLAX */
-.parallax {
-  background-image: url('img/beach.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
 }
 
 /* PRODUCTS */
@@ -141,7 +158,7 @@ body {
 .accessory-scroll {
   display: flex;
   gap: 16px;
-  justify-content: center; /* centralizado no desktop */
+  justify-content: center;
 }
 
 .accessory {
@@ -163,7 +180,7 @@ footer {
   font-size: 12px;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .flags {
