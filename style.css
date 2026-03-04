@@ -1,3 +1,7 @@
+/* =================================================
+   RESET / BASE GLOBAL
+================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +15,12 @@ body {
   padding-top: 110px; /* espaço para header fixo */
 }
 
-/* HEADER FIXO */
+
+/* =================================================
+   HEADER
+   (logo + tagline + bandeiras)
+================================================= */
+
 .site-header {
   padding: 12px;
   text-align: center;
@@ -35,6 +44,8 @@ body {
   color: #555;
 }
 
+/* bandeiras do header */
+
 .flags {
   position: absolute;
   right: 24px;
@@ -48,13 +59,11 @@ body {
   width: 22px;
 }
 
-.br-price,
-.ar-price {
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
 
-/* WHATSAPP */
+/* =================================================
+   WHATSAPP FLOATING BUTTON
+================================================= */
+
 .whatsapp {
   position: fixed;
   right: 18px;
@@ -73,11 +82,15 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* HERO COM VIDEO */
+
+/* =================================================
+   HERO SECTION (VIDEO)
+================================================= */
+
 .hero {
   position: relative;
   height: 75vh;
-  margin-top: 38px; 
+  margin-top: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,6 +107,8 @@ body {
   z-index: 0;
 }
 
+/* texto opcional sobre o vídeo */
+
 .hero-text {
   position: relative;
   z-index: 1;
@@ -103,7 +118,15 @@ body {
   font-size: 18px;
 }
 
-/* PRODUCTS */
+
+/* =================================================
+   PRODUCT SECTION (BIQUÍNIS)
+================================================= */
+
+.products-section {
+  padding: 60px 40px;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -111,10 +134,20 @@ body {
   padding: 48px 24px;
 }
 
+
+/* card do produto */
+
 .product-card img {
   width: 100%;
   display: block;
+  transition: transform 0.5s ease;
 }
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* botão comprar */
 
 .product-card button {
   width: 100%;
@@ -125,6 +158,12 @@ body {
   margin-top: 12px;
   cursor: pointer;
 }
+
+
+/* =================================================
+   PRICE COMPONENT
+   (usado em biquínis e acessórios)
+================================================= */
 
 .price {
   margin-top: 12px;
@@ -144,43 +183,120 @@ body {
   width: 18px;
 }
 
-/* ACCESSORIES */
+.br-price,
+.ar-price {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+
+/* =================================================
+   ACCESSORIES SECTION
+   (óculos, chapéus, bolsas, cangas)
+================================================= */
+
 .accessories {
-  padding: 48px 24px;
+  padding: 60px 40px;
 }
 
-.accessories h2 {
+/* título da seção (BIQUÍNIS / ACESSÓRIOS) */
+
+.section-title {
   text-align: center;
-  margin-bottom: 24px;
+  font-size: 22px;
   font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  margin-top: 40px;
+  margin-bottom: 32px;
 }
 
-.accessory-scroll {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
+/* categoria dentro da seção */
+
+.accessory-category {
+  margin-bottom: 80px;
 }
 
-.accessory {
-  min-width: 140px;
-  padding: 32px;
-  border: 1px solid #ddd;
-  text-align: center;
+.accessory-category-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-/* LIFESTYLE */
+/* grid de acessórios */
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* card de acessório */
+
+.accessory-card > img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.accessory-card:hover img {
+  transform: scale(1.05);
+}
+
+/* botão ML */
+
+.accessory-card button {
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  color: #fff;
+  border: none;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+
+/* =================================================
+   LIFESTYLE SECTION
+================================================= */
+
 .lifestyle {
   height: 40vh;
 }
 
-/* FOOTER */
+
+/* =================================================
+   FOOTER
+================================================= */
+
 footer {
   padding: 32px;
   text-align: center;
   font-size: 12px;
 }
 
-/* MOBILE */
+
+/* =================================================
+   RESPONSIVE DESIGN
+   (todas as regras para tablets e mobile)
+================================================= */
+
+
+/* tablets */
+
+@media (max-width: 1024px) {
+
+  .accessories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* celulares */
+
 @media (max-width: 768px) {
 
   .flags {
@@ -202,19 +318,23 @@ footer {
     margin-top: 16px;
   }
 
-  .accessory-scroll {
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 10px;
+}
+
+
+/* celulares pequenos */
+
+@media (max-width: 600px) {
+
+  .accessories-grid {
+    grid-template-columns: 1fr;
   }
 
-  .accessory {
-    flex-shrink: 0;
-  }
 }
 
 @media (max-width: 480px) {
+
   .flags img {
     width: 20px;
   }
+
 }
