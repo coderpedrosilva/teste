@@ -96,12 +96,49 @@ margin-top:14px;
 
 font-size:14px;
 
+gap:28px;
+
 }
 
-.main-nav a{
+.main-nav a,
+.main-nav button,
+.main-nav span{
+
+font-family:'Montserrat',sans-serif;
+font-size:14px;
+
+letter-spacing:1.5px;
+
+text-transform:uppercase;
+
+font-weight:400;
+
+color:#111;
 
 text-decoration:none;
+
+}
+
+.main-nav a:hover{
+opacity:0.6;
+}
+
+.main-nav button{
+
+font-family: 'Montserrat', sans-serif;
+font-size: 14px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+font-weight: 400;
+
+background:none;
+border:none;
+
 color:#111;
+
+cursor:pointer;
+
+padding:0;
 
 }
 
@@ -381,6 +418,8 @@ left:0;
 width:100%;
 
 padding:20px;
+
+gap:28px;
 
 }
 
