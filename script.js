@@ -1,15 +1,13 @@
-// Preço base Mercado Livre
-const basePriceBR = 199.90;
-const exchangeRate = 180; // Peso argentino (exemplo)
+function toggleMenu(){
 
-document.querySelectorAll('.br-price').forEach(el => {
-  el.innerText = basePriceBR.toFixed(2);
-});
+const nav = document.getElementById("mainNav");
 
-document.querySelectorAll('.ar-price').forEach(el => {
-  el.innerText = (basePriceBR * exchangeRate).toFixed(0);
-});
+nav.classList.toggle("show");
 
-function openML() {
-  window.open("https://www.mercadolivre.com.br", "_blank");
+}
+
+function openML(){
+
+window.open("https://mercadolivre.com","_blank");
+
 }
